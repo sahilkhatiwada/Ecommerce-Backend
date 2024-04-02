@@ -1,14 +1,15 @@
 import express from "express";
 import { generateOtp } from "./generate.random.number.js";
-import User from "./user.model.js";
+import { User } from "./user.model.js";
 import {
   passwordValidationSchema,
   userEmailValidationSchema,
   verifyOtpValidationSchema,
 } from "./user.validation.js";
-import { sendEmailOTP } from "./email.service.js";
+
 import Otp from "../otp/otp.model.js";
 import bcrypt from "bcrypt";
+import { sendEmailOTP } from "./emaill.service.js";
 
 const router = express.Router();
 
