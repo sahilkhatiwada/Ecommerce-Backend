@@ -6,7 +6,7 @@ import cartRoutes from "./cart/cart.route.js";
 import cors from "cors";
 import paymentRoutes from "./payment/payment.route.js";
 import orderRoutes from "./order/order.route.js";
-
+import resetPasswordRoutes from "./user/reset.password.route.js";
 const app = express();
 // to make app understand json
 app.use(express.json());
@@ -23,9 +23,10 @@ app.use(productRoutes);
 app.use(cartRoutes);
 app.use(paymentRoutes);
 app.use(orderRoutes);
+app.use(resetPasswordRoutes);
 
 // port
-const PORT = 8000;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
   console.log(`App is listening on port ${PORT}`);
